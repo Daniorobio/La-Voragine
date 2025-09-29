@@ -119,20 +119,26 @@
         const root = new BABYLON.TransformNode("terraza_root", scene);
         result.meshes.forEach(m => { if (m.parent == null) m.parent = root; });
         root.scaling = new BABYLON.Vector3(0.5, 0.5, 0.5);
-        // Crear un material PBR (físicamente basado)
+         // Crear un material PBR
         const terrazaMat = new BABYLON.PBRMaterial("terrazaMat", scene);
-        // Textura base (si tienes un diffuse/color, cámbialo aquí)
+    
+        // Textura base
         terrazaMat.albedoTexture = new BABYLON.Texture("https://Daniorobio.github.io/La-Voragine/wood.jpg", scene);
     
         // Normal map
         terrazaMat.bumpTexture = new BABYLON.Texture("https://Daniorobio.github.io/La-Voragine/NormalMap.png", scene);
+        terrazaMat.bumpTexture.level = 1.0;
     
-        // Opcional: aumenta o disminuye la fuerza del relieve
-        terrazaMat.bumpTexture.level = 1.0; // valores: 0.1 = suave, 2.0 = fuerte
+        // Aplicar a todas las mallas que no sean el root
+        result.meshes.forEach(m => {
+            if (m instanceof BABYLON.Mesh) {
+                m.material = terrazaMat;
+            }
+        });
     
-        // Aplicar material a la malla de la terraza
-        result.meshes[4].material = terrazaMat;
-
+        // Luz para ver el efecto
+        const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0), scene);
+        light.intensity = 1.2;
     });
     
     // Barco
@@ -191,6 +197,7 @@
         </script>
     </body>
 </html>
+
 
 
 
