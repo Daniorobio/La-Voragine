@@ -94,11 +94,20 @@
     });
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "alicia.glb").then((result) => {
-        const parentNode = new BABYLON.TransformNode("AliciaRoot", scene);
-
-    // Escala pequeña
-        parentNode.scaling = new BABYLON.Vector3(0.005, 0.005, 0.005);
-        parentNode.position = BABYLON.Vector3.Zero();
+        const alicia = new BABYLON.TransformNode("AliciaRoot", scene);
+        // Escala pequeña
+        alicia.scaling = new BABYLON.Vector3(0.05, 0.05, 0.05);
+        alicia.position = BABYLON.Vector3.Zero();
+    
+        // Recalcular bounding box para centrarlo correctamente
+        const boundingInfo = alicia.getHierarchyBoundingVectors(true);
+        const center = alicia.min.add(boundingInfo.max).scale(0.5);
+    
+        // Reubicar el modelo para que su centro esté en el origen
+        alicia.position = alicia.position.subtract(center);
+    
+        // Ajustar cámara para ver bien el modelo
+        scene.activeCamera.setTarget(BABYLON.Vector3.Zero());
 
     });
 
@@ -136,6 +145,7 @@
         </script>
     </body>
 </html>
+
 
 
 
