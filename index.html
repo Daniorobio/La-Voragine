@@ -98,7 +98,7 @@
     result.meshes[1].position = new BABYLON.Vector3(-3, 3, 2);
     });
             
-    BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "hamaca.glb").then((result) => {
+    /*BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "hamaca.glb").then((result) => {
           // Crear un TransformNode que actúe como padre
     const root = new BABYLON.TransformNode("hamaca_root", scene);
 
@@ -112,7 +112,7 @@
     // Escalar el root (esto escala todo el modelo)
     root.scaling = new BABYLON.Vector3(0.2, 0.2, 0.2);
     root.position = new BABYLON.Vector3(3, 2, 0);
-    });
+    });*/
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "poeta.glb").then((result) => {
         // Crear un TransformNode que actúe como padre
@@ -192,6 +192,7 @@
         </script>
     </body>
 </html>
+
 
 
 
