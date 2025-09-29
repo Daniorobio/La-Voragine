@@ -96,25 +96,10 @@
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "alicia.glb").then((result) => {
         const parentNode = new BABYLON.TransformNode("AliciaRoot", scene);
 
-    result.meshes.forEach(mesh => {
-        if (mesh.name !== "__root__") {
-            mesh.parent = parentNode;
-        }
-    });
-
     // Escala pequeña
     parentNode.scaling = new BABYLON.Vector3(0.005, 0.005, 0.005);
     parentNode.position = BABYLON.Vector3.Zero();
 
-    // Recalcular bounding box para centrarlo correctamente
-    const boundingInfo = parentNode.getHierarchyBoundingVectors(true);
-    const center = boundingInfo.min.add(boundingInfo.max).scale(0.5);
-
-    // Reubicar el modelo para que su centro esté en el origen
-    parentNode.position = parentNode.position.subtract(center);
-
-    // Ajustar cámara para ver bien el modelo
-    scene.activeCamera.setTarget(BABYLON.Vector3.Zero());
     });
 
     return scene;
@@ -151,6 +136,7 @@
         </script>
     </body>
 </html>
+
 
 
 
