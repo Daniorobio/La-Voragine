@@ -102,7 +102,24 @@
     });
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "poeta.glb").then((result) => {
-    result.meshes[3].scaling = new BABYLON.Vector3(0.005, 0.005, 0.005);
+     let root = result.meshes[0];
+    root.scaling = new BABYLON.Vector3(0.005, 0.005, 0.005);
+
+    // Crear GUI en pantalla
+    let advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+
+    // Recorremos los meshes y mostramos sus nombres
+    result.meshes.forEach((m, i) => {
+        let textBlock = new BABYLON.GUI.TextBlock();
+        textBlock.text = i + " → " + m.name;
+        textBlock.color = "white";
+        textBlock.fontSize = 18;
+        textBlock.top = (i * 25) - 200; // posición vertical (ajusta si quieres)
+        textBlock.left = -200;          // posición horizontal (ajusta si quieres)
+        textBlock.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
+        textBlock.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER;
+        advancedTexture.addControl(textBlock);
+    });
     });
             
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "terraza.glb").then((result) => {
@@ -155,6 +172,7 @@
         </script>
     </body>
 </html>
+
 
 
 
