@@ -94,9 +94,10 @@
     });
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "alicia.glb").then((result) => {
-        result.meshes[1].scaling = new BABYLON.Vector3(0.02, 0.02, 0.02);  // 🔽 más pequeño
-        result.meshes[1].position.x = 1;
-        result.meshes[1].x = BABYLON.Tools.ToRadians(45);
+        const model = result.meshes[0];  // el primer mesh suele ser el padre
+        model.scaling = new BABYLON.Vector3(0.2, 0.2, 0.2);  // <--- aquí defines el tamaño
+        model.position.x = 1;
+        model.rotation.x = BABYLON.Tools.ToRadians(45);
   
     });
 
@@ -134,6 +135,7 @@
         </script>
     </body>
 </html>
+
 
 
 
