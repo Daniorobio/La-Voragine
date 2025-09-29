@@ -95,7 +95,7 @@
         const root = new BABYLON.TransformNode("alicia_root", scene);
         result.meshes.forEach(m => { if (m.parent == null) m.parent = root; });
         root.scaling = new BABYLON.Vector3(0.02, 0.02, 0.02);
-        root.position = new BABYLON.Vector3(3, 1.5, 1);
+        root.position = new BABYLON.Vector3(3, 1.5, 1.5);
     });
     
     // Hamaca
@@ -119,6 +119,20 @@
         const root = new BABYLON.TransformNode("terraza_root", scene);
         result.meshes.forEach(m => { if (m.parent == null) m.parent = root; });
         root.scaling = new BABYLON.Vector3(0.5, 0.5, 0.5);
+        // Crear un material PBR (físicamente basado)
+        const terrazaMat = new BABYLON.PBRMaterial("terrazaMat", scene);
+        // Textura base (si tienes un diffuse/color, cámbialo aquí)
+        terrazaMat.albedoTexture = new BABYLON.Texture("https://Daniorobio.github.io/La-Voragine/wood.jpg", scene);
+    
+        // Normal map
+        terrazaMat.bumpTexture = new BABYLON.Texture("https://Daniorobio.github.io/La-Voragine/NormalMap.png", scene);
+    
+        // Opcional: aumenta o disminuye la fuerza del relieve
+        terrazaMat.bumpTexture.level = 1.0; // valores: 0.1 = suave, 2.0 = fuerte
+    
+        // Aplicar material a la malla de la terraza
+        result.meshes[4].material = terrazaMat;
+
     });
     
     // Barco
@@ -172,6 +186,7 @@
         </script>
     </body>
 </html>
+
 
 
 
