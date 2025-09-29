@@ -94,39 +94,27 @@
     });
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "alicia.glb").then((result) => {
-    result.meshes.forEach(mesh => {
-        mesh.scaling = new BABYLON.Vector3(0.01, 0.01, 0.01);
-    });
+     result.meshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
     });
             
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "hamaca.glb").then((result) => {
-    result.meshes.forEach(mesh => {
-        mesh.scaling = new BABYLON.Vector3(0.01, 0.01, 0.01);
-    });
+     result.meshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
     });
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "poeta.glb").then((result) => {
-     result.meshes.forEach(mesh => {
-        mesh.scaling = new BABYLON.Vector3(0.005, 0.005, 0.005);
-        });
+      result.meshes[0].scaling = new BABYLON.Vector3(0.01, 0.01, 0.01);
     });
             
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "terraza.glb").then((result) => {
-    result.meshes.forEach(mesh => {
-        mesh.scaling = new BABYLON.Vector3(0.01, 0.01, 0.01);
-    });
+     result.meshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
     });
             
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "boat.glb").then((result) => {
-    result.meshes.forEach(mesh => {
-        mesh.scaling = new BABYLON.Vector3(0.01, 0.01, 0.01);
-    });
+        result.meshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
     });
             
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "rio.glb").then((result) => {
-    result.meshes.forEach(mesh => {
-        mesh.scaling = new BABYLON.Vector3(0.01, 0.01, 0.01);
-    });
+     result.meshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
     });
             
     /*BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "arbol.glb").then((result) => {
@@ -167,6 +155,7 @@
         </script>
     </body>
 </html>
+
 
 
 
