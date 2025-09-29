@@ -103,7 +103,7 @@
         const root = new BABYLON.TransformNode("hamaca_root", scene);
         result.meshes.forEach(m => { if (m.parent == null) m.parent = root; });
         root.scaling = new BABYLON.Vector3(0.05, 0.05, 0.05);
-        root.position = new BABYLON.Vector3(3, 1.0, 1);
+        root.position = new BABYLON.Vector3(3, 0.7, 1);
     });
     
     // Poeta
@@ -111,7 +111,7 @@
         const root = new BABYLON.TransformNode("poeta_root", scene);
         result.meshes.forEach(m => { if (m.parent == null) m.parent = root; });
         root.scaling = new BABYLON.Vector3(0.01, 0.01, 0.01);
-        root.position = new BABYLON.Vector3(0, 1.0, 1);
+        root.position = new BABYLON.Vector3(0, 0.7, 1);
     });
     
     // Terraza
@@ -126,7 +126,7 @@
         const root = new BABYLON.TransformNode("boat_root", scene);
         result.meshes.forEach(m => { if (m.parent == null) m.parent = root; });
         root.scaling = new BABYLON.Vector3(1, 1, 1);
-        root.position = new BABYLON.Vector3(0, 0, 5);
+        root.position = new BABYLON.Vector3(0, 0, 8);
     });
     
     // Río
@@ -172,6 +172,7 @@
         </script>
     </body>
 </html>
+
 
 
 
