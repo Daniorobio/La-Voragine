@@ -98,7 +98,18 @@
     });
             
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "hamaca.glb").then((result) => {
-    result.meshes[2].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+          // Crear un TransformNode que actúe como padre
+    const root = new BABYLON.TransformNode("hamaca_root", scene);
+
+    // Reparentear todo lo que vino del archivo al nuevo root
+    result.meshes.forEach(mesh => {
+        if (mesh.parent == null) {
+            mesh.parent = root;
+        }
+    });
+
+    // Escalar el root (esto escala todo el modelo)
+    root.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
     });
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "poeta.glb").then((result) => {
@@ -113,7 +124,7 @@
     });
 
     // Escalar el root (esto escala todo el modelo)
-    root.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+    root.scaling = new BABYLON.Vector3(0.05, 0.05, 0.05);
     });
             
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "terraza.glb").then((result) => {
@@ -166,6 +177,7 @@
         </script>
     </body>
 </html>
+
 
 
 
