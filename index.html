@@ -97,7 +97,7 @@
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "alicia.glb", scene).then((result) => {
         const root = new BABYLON.TransformNode("alicia_root", scene);
         result.meshes.forEach(m => { if (m.parent == null) m.parent = root; });
-        root.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+        root.scaling = new BABYLON.Vector3(0.05, 0.05, 0.05);
         root.position = new BABYLON.Vector3(-3, 3, 2);
     });
     
@@ -113,7 +113,7 @@
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "poeta.glb", scene).then((result) => {
         const root = new BABYLON.TransformNode("poeta_root", scene);
         result.meshes.forEach(m => { if (m.parent == null) m.parent = root; });
-        root.scaling = new BABYLON.Vector3(0.05, 0.05, 0.05);
+        root.scaling = new BABYLON.Vector3(0.01, 0.01, 0.01);
         root.position = new BABYLON.Vector3(0, 2, 0);
     });
     
@@ -128,14 +128,14 @@
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "boat.glb", scene).then((result) => {
         const root = new BABYLON.TransformNode("boat_root", scene);
         result.meshes.forEach(m => { if (m.parent == null) m.parent = root; });
-        root.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+        root.scaling = new BABYLON.Vector3(0.5, 0.5, 0.5);
     });
     
     // Río
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "rio.glb", scene).then((result) => {
         const root = new BABYLON.TransformNode("rio_root", scene);
         result.meshes.forEach(m => { if (m.parent == null) m.parent = root; });
-        root.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+        root.scaling = new BABYLON.Vector3(0.5, 0.5, 0.5);
     });
 
             
@@ -173,6 +173,7 @@
         </script>
     </body>
 </html>
+
 
 
 
