@@ -152,7 +152,8 @@
     });
 
     BABYLON.ImportMeshAsync(Assets.meshes.dragon.rootUrl + Assets.meshes.dragon.filename, scene).then(function({meshes}){
-        meshes[0].scaling = new BABYLON.Vector3(1, 1, 1);
+        meshes[0].scaling = new BABYLON.Vector3(3, 3, 3);
+        meshes[0].position = new BABYLON.Vector3(0, 0, 3);
     });
 
             
@@ -190,6 +191,7 @@
         </script>
     </body>
 </html>
+
 
 
 
