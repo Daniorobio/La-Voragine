@@ -94,10 +94,19 @@
     });
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "alicia.glb").then((result) => {
-        const model = result.meshes[0];  // el primer mesh suele ser el padre
-        model.scaling = new BABYLON.Vector3(0.002, 0.002, 0.002);  // <--- aquí defines el tamaño
-        model.position.x = 1;
-        model.rotation.x = BABYLON.Tools.ToRadians(45);
+        const parentNode = new BABYLON.TransformNode("AliciaRoot", scene);
+    
+        // Recorre todos los meshes y los hace hijos del nodo padre
+        result.meshes.forEach(mesh => {
+            if (mesh.name !== "__root__") {  // evita duplicar el nodo raíz original
+                mesh.parent = parentNode;
+            }
+        });
+    
+        // Escala el nodo padre para que todo el modelo se reduzca
+        parentNode.scaling = new BABYLON.Vector3(0.01, 0.01, 0.01); // 🔽 prueba valores pequeños
+        parentNode.position = new BABYLON.Vector3(0, 1, 0); // súbelo un poco si queda bajo el suelo
+        parentNode.rotation.x = BABYLON.Tools.ToRadians(45);
   
     });
 
@@ -135,6 +144,7 @@
         </script>
     </body>
 </html>
+
 
 
 
