@@ -95,7 +95,7 @@
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "alicia.glb").then((result) => {
     result.meshes[1].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
-    result.meshes[1].position = new BABYLON.Vector3(-2, 0, 0);
+    result.meshes[1].position = new BABYLON.Vector3(-3, 3, 0);
     });
             
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "hamaca.glb").then((result) => {
@@ -111,6 +111,7 @@
 
     // Escalar el root (esto escala todo el modelo)
     root.scaling = new BABYLON.Vector3(0.2, 0.2, 0.2);
+    root.position = new BABYLON.Vector3(-3, 2, 0);
     });
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://Daniorobio.github.io/La-Voragine/", "poeta.glb").then((result) => {
@@ -178,6 +179,7 @@
         </script>
     </body>
 </html>
+
 
 
 
